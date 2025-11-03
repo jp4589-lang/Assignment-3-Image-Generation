@@ -1,0 +1,28 @@
+[project]
+name = "sps-hw3"
+version = "0.1.0"
+description = "Assignment 3 — GAN image generation API (FastAPI) + training"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.110.0",
+  "uvicorn[standard]>=0.27.0",
+  "pydantic>=2.7.0",
+  "numpy>=1.26.0",
+  "pillow>=10.0.0",
+  "torch>=2.4.0",
+  "torchvision>=0.19.0",
+]
+
+[project.optional-dependencies]
+training = ["matplotlib>=3.8.0"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# ---- Tell setuptools how to discover packages ----
+[tool.setuptools]
+packages = { find = { include = ["app*", "helper_lib*"], exclude = [
+  "outputs*", "data*", "HW1*", "HW2*"
+] } }

@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+
+# PyTorch CPU wheels (matching versions)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.4.1
+torchvision==0.19.1
+
+numpy
+pillow
